@@ -54,3 +54,9 @@ Changes:
 Written by Alan Aufderheide
 
 GPL v3 license, kindly include text above in any redistribution.
+
+#######
+sudo nano /etc/rc.local
+
+# add to the bottom just before 'exit 0'
+sudo python /home/pi/RaspberryPiLcdMenu/lcdmenu.py &
