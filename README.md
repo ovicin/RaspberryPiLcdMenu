@@ -75,10 +75,10 @@ Check the blacklists
 sudo nano /etc/modprobe.d/raspi-blacklist.conf
 ```
 
-'''
+```
 blacklist spi-bcm2708
 #blacklist i2c-bcm2708
-'''
+```
 
 ```
 sudo reboot
