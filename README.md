@@ -56,7 +56,12 @@ Written by Alan Aufderheide
 GPL v3 license, kindly include text above in any redistribution.
 
 #######
-sudo nano /etc/rc.local
+Automatically start the menu at startup
+'''sudo nano /etc/rc.local'''
 
-# add to the bottom just before 'exit 0'
-sudo python /home/pi/RaspberryPiLcdMenu/lcdmenu.py &
+Add at the end of the file before exit0
+'''
+#start the Adafruit Pi Plate menu
+cd /home/pi/RaspberryPiLcdMenu
+sudo python lcdmenu.py &
+'''
