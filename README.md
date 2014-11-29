@@ -55,13 +55,41 @@ Written by Alan Aufderheide
 
 GPL v3 license, kindly include text above in any redistribution.
 
-#######
-Automatically start the menu at startup
-'''sudo nano /etc/rc.local'''
+##Configure I2C
+
+```sudo nano /etc/modules```
+Check that he following lines are present
+```
+i2c-bcm2708 
+i2c-dev
+```
+
+Install the following packages, if there are problems installing them check the mirrors from apt.conf
+```
+sudo apt-get install python-smbus
+sudo apt-get install i2c-tools
+```
+
+Check the blacklists
+```
+sudo nano /etc/modprobe.d/raspi-blacklist.conf
+```
+
+'''
+blacklist spi-bcm2708
+#blacklist i2c-bcm2708
+'''
+
+```
+sudo reboot
+```
+
+##Automatically start the menu at startup
+```sudo nano /etc/rc.local```
 
 Add at the end of the file before exit0
-'''
+```
 #start the Adafruit Pi Plate menu
 cd /home/pi/RaspberryPiLcdMenu
 sudo python lcdmenu.py &
-'''
+```
